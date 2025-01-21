@@ -1,14 +1,31 @@
-const express = require("express")
-const app = express()
-const dotenv = require("dotenv").config()
+const express = require("express");
+const app = express();
+const dotenv = require("dotenv").config();
+const connectDb = require("./config/connectionDB");
 
-const PORT= process.env.PORT || 3000
+const PORT = process.env.PORT || 3000;
+
+// Check if the .env variables are loaded correctly
+if (!process.env.CONNECTION_STRING) {
+  console.error("MongoDB connection string is missing in .env file");
+  process.exit(1);
+}
+
+// Connect to the database
+connectDb();
 
 
-app.use("/recipe",require("./routes/recipe"))
+// Middleware
+app.use(express.json());
 
+// Routes
+app.use("/recipe", require("./routes/recipe"));
 
-app.listen(PORT,(err)=>{
+// Start the server
+app.listen(PORT, (err) => {
+  if (err) {
+    console.error(`Error starting server: ${err.message}`);
+  } else {
     console.log(`App is listening on port ${PORT}`);
-
-})
+  }
+});
