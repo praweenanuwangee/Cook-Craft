@@ -1,7 +1,14 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-})
+  server: {
+    fs: {
+      allow: [
+        // Add your project root path here
+        'D:/#SLIIT/Project/food-recipe/Cook-Craft/frontend/Cook-Craft-App',
+      ],
+    },
+  },
+});
