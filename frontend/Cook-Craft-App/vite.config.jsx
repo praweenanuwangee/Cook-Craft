@@ -6,9 +6,8 @@ export default defineConfig({
   server: {
     fs: {
       allow: [
-        // Add your project root path here
-        'D:/#SLIIT/Project/food-recipe/Cook-Craft/frontend/Cook-Craft-App',
-      ],
-    },
-  },
+        'D:/SLIIT/Project/food-recipe/Cook-Craft/frontend/Cook-Craft-App'
+      ]
+    }
+  }
 });
