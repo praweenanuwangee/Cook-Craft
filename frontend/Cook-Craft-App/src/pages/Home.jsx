@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom'; // Make sure this is imported
 import foodRecipe from '../assets/Recipes.png';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import RecipeItems from '../components/RecipeItems';
+
 
 export default function Home() {
     const navigate = useNavigate(); // Initialize navigate here
@@ -36,6 +38,10 @@ export default function Home() {
                 </svg>
             </div>
             
+
+            <div className='recipe'>
+                <RecipeItems/>
+            </div>
         </>
     );
 }

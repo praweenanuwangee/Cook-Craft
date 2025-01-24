@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const dotenv = require("dotenv").config();
 const connectDb = require("./config/connectionDB");
+const cors =require("cors")
 
 const PORT = process.env.PORT || 3000;
 
@@ -17,6 +18,7 @@ connectDb();
 
 // Middleware
 app.use(express.json());
+app.use(cors());
 
 // Routes
 app.use("/recipe", require("./routes/recipe"));
