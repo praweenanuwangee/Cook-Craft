@@ -21,6 +21,7 @@ app.use(express.json());
 app.use(cors());
 
 // Routes
+app.use("/",require("./routes/user"))
 app.use("/recipe", require("./routes/recipe"));
 
 // Start the server
