@@ -25,7 +25,8 @@ export default function Home() {
             <section className='home'>
                 <div className='left'>
                     <h1>Food Recipe</h1>
-                    <h5>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout...</h5>
+                    <h4>Welcome to CookCraft! Your one-stop destination for exploring, creating, and sharing delicious recipes. Whether you're a seasoned chef or a home cook, CookCraft helps you discover new dishes, organize your favorite recipes, and bring out the best in your cooking journey. </h4>
+                    
                     <button onClick={addRecipe}>Share your recipe</button>
                 </div>
                 <div className='right'>
