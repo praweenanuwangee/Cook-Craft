@@ -1,25 +1,24 @@
-// src/pages/Home.jsx
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import RecipeItems from '../components/RecipeItems';
-import Modal from '../components/Modal';
-import InputForm from '../components/InputForm';
-import foodRecipe from '../assets/Recipes.png';
+import React, { useState } from 'react'
+import foodRecipe from '../assets/foodRecipe.png'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
+import RecipeItems from '../components/RecipeItems'
+import { useNavigate } from 'react-router-dom'
+import Modal from '../components/Modal'
+import InputForm from '../components/InputForm'
 
 export default function Home() {
-    const navigate = useNavigate();
-    const [isOpen, setIsOpen] = useState(false);
+    const navigate = useNavigate()
+    const [isOpen, setIsOpen] = useState(false)
 
     const addRecipe = () => {
-        let token = localStorage.getItem("token");
-        if (token) {
-            navigate("/addRecipe");
-        } else {
-            setIsOpen(true);
+        let token = localStorage.getItem("token")
+        if (token)
+            navigate("/addRecipe")
+        else {
+            setIsOpen(true)
         }
-    };
+    }
 
     return (
         <>

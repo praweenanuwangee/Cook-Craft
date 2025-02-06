@@ -1,19 +1,34 @@
-const express=require("express")
-const app=express()
-const dotenv=require("dotenv").config()
-const connectDb=require("./config/connectionDb")
-const cors=require("cors")
+const express = require("express");
+const path = require("path");
+const dotenv = require("dotenv").config();
+const connectDb = require("./config/connectionDb");
+const cors = require("cors");
 
-const PORT=process.env.PORT || 3000
-connectDb()
+const app = express();
 
-app.use(express.json())
-app.use(cors())
-app.use(express.static("public"))
+// Load environment variables and connect to the database
+const PORT = process.env.PORT || 3000;
+connectDb();
 
-app.use("/",require("./routes/user"))
-app.use("/recipe",require("./routes/recipe"))
+// Middleware setup
+app.use(express.json());
+app.use(cors());
 
-app.listen(PORT,(err)=>{
-    console.log(`app is listening on port ${PORT}`)
-})
+// Serve static files from the 'public/images' folder
+app.use('/images', express.static(path.join(__dirname, 'public/images')));
+
+// Serve other static files (e.g., public files like HTML, JS, CSS)
+app.use(express.static("public"));
+
+// Routes
+app.use("/", require("./routes/user"));
+app.use("/recipe", require("./routes/recipe"));
+
+// Start the server
+app.listen(PORT, (err) => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log(`App is listening on port ${PORT}`);
+  }
+});
