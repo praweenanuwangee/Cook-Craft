@@ -29,7 +29,7 @@ export default function Home() {
                     <button onClick={addRecipe}>Share your recipe</button>
                 </div>
                 <div className='right'>
-                    <img src={foodRecipe} width="320px" height="300px"></img>
+                    <img src={foodRecipe} width="450px" height="300px"></img>
                 </div>
             </section>
             <div className='bg'>
