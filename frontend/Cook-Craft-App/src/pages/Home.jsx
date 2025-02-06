@@ -24,8 +24,8 @@ export default function Home() {
         <>
             <section className='home'>
                 <div className='left'>
-                    <h1>Food Recipe</h1>
-                    <h5>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</h5>
+                    <h1>𝓕𝓸𝓸𝓭 𝓡𝓮𝓬𝓲𝓹𝓮</h1>
+                    <h5>Discover, create, and share delicious meals with CookCraft, your go-to app for culinary inspiration. Whether you're a seasoned chef or a beginner in the kitchen, CookCraft provides a wide variety of recipes tailored to all tastes and occasions.</h5>
                     <button onClick={addRecipe}>Share your recipe</button>
                 </div>
                 <div className='right'>
